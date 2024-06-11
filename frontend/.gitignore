@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+
+# Output directories
+dist/
+build/
+
+# Environment variables
+.env
+
+# Cache and logs
+.cache/
+logs/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# macOS system files
+.DS_Store
+
+# Compiled files
+*.log
+*.pid
+*.out
+

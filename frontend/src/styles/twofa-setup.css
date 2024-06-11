@@ -1,0 +1,243 @@
+.two-fa-settings header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.layout {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+  text-align: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.progression-bar {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.circle.active {
+  background-color: #2832c2;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #ddd;
+  margin: 0 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #2832c286 50%,
+    #ddd 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
+}
+
+.line.active::before {
+  background-position: 0 0;
+}
+
+.circle.step-two {
+  background-color: var(--bg-secondary);
+}
+
+footer {
+  background-color: rgba(192, 192, 192, 0.329);
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  bottom: 0;
+  border-top: solid rgb(149, 149, 149) 0.1px;
+  padding: 30px;
+  width: 100%;
+}
+
+.two-fa-settings button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.inputCode {
+  background: none;
+  border: solid rgba(111, 111, 111, 0.363) 0.1px;
+  border-radius: 6px;
+  color: black;
+}
+
+.button-next {
+  background-color: #2832c2;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: solid rgba(146, 146, 146, 0.329) 0.1px;
+  color: white;
+  border-radius: 2px;
+}
+
+.button-next:hover {
+  background-color: #2832c2c9;
+}
+
+.button-done {
+  background-color: #b0b0b044;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: solid rgba(146, 146, 146, 0.329) 0.1px;
+  color: white;
+  border-radius: 2px;
+}
+
+.button-done-auth-true {
+  background-color: #2832c2;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: solid rgba(146, 146, 146, 0.329) 0.1px;
+  color: white;
+  border-radius: 2px;
+}
+
+.button-done-auth-false {
+  background-color: #b0b0b044;
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: auto;
+  border: solid rgba(146, 146, 146, 0.329) 0.1px;
+  color: white;
+  border-radius: 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+form label,
+form input,
+form button {
+  max-width: 200px;
+  margin: 0px;
+}
+
+form input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+form button {
+  box-sizing: border-box;
+  width: 50%;
+  border-radius: 5px;
+  background-color: #2832c2;
+  margin: 0 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  border: solid rgba(146, 146, 146, 0.329) 0.1px;
+  color: white;
+  border-radius: 2px;
+}
+
+form button:hover {
+  cursor: pointer;
+  background-color: #2832c2;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.congrats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.congrats-message {
+  animation: popIn 1s ease-out;
+  font-size: 2rem;
+  color: #2832c2;
+}
+
+.two-fa-settings {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-top: solid rgba(131, 131, 131, 0.585) 0.1px;
+  padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.twoFaInput {
+  background-color: white;
+  color: black;
+}
+
+.validateTwoFaButton {
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #2832c2;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

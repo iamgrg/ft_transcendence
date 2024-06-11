@@ -1,0 +1,54 @@
+services:
+  database:
+    container_name: postgres
+    image: postgres:16.1-alpine3.19
+    stop_grace_period: 2s
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - .env
+    networks:
+      - ft_transcendence
+
+  frontend:
+    container_name: vitejs
+    build:
+      context: frontend
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    networks:
+      - ft_transcendence
+    volumes:
+      - ./frontend:/usr/ft_transcendence
+      - /usr/ft_transcendence/node_modules
+    stop_grace_period: 2s
+
+  backend:
+    container_name: nestjs
+    build:
+      context: backend
+    ports:
+      - 3001:3001 # for development
+      - 5555:5555
+    env_file:
+      - .env
+    networks:
+      - ft_transcendence
+    volumes:
+      - ./backend:/usr/ft_transcendence
+      - /usr/ft_transcendence/node_modules
+    depends_on:
+      - database
+    stop_grace_period: 2s
+
+networks:
+  ft_transcendence:
+    driver: bridge
+
+volumes:
+  postgres:
+    name: postgres-database

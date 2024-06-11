@@ -1,0 +1,39 @@
+.BallSizeWrapper {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+  }
+  
+  .smallSizeBall, .mediumSizeBall, .largeSizeBall {
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.2s;
+  }
+  
+  .smallSizeBall:hover, .mediumSizeBall:hover, .largeSizeBall:hover {
+	background-color: var(--bg-secondary);
+  }
+  
+  .smallSizeBall, .mediumSizeBall, .largeSizeBall {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+  }
+
+  .smallSizeBall  {
+	font-size: 24px;
+	
+  }
+  .mediumSizeBall  {
+	font-size: 36px;
+  }
+  .largeSizeBall {
+	font-size: 48px;
+  }
+  .selectedBall {
+	border: 1px solid var(--bg-secondary);
+  }
+  
